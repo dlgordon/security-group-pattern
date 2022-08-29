@@ -54,7 +54,7 @@ module "domain-controller" {
   source            = "./domain-controller"
   win_username      = "domain_admin"
   win_password      = random_string.domain_admin_password.id
-  subnet_id         = aws_subnet.core_subnet_b.id
+  subnet_id         = aws_subnet.core_subnet_a.id
   security_group_id = aws_security_group.active_directory_security_group_dc2dc.id
 }
 

@@ -18,30 +18,3 @@ resource "aws_security_group_rule" "allow_all_out" {
   security_group_id = aws_security_group.monitoring_traffic.id
 }
 
-resource "aws_security_group_rule" "sccm_1" {
-  provider          = aws.network
-  type              = "ingress"
-  from_port         = 135
-  to_port           = 135
-  protocol          = "tcp"
-  self              = true
-  security_group_id = aws_security_group.monitoring_traffic.id
-}
-resource "aws_security_group_rule" "sccm_2" {
-  provider          = aws.network
-  type              = "ingress"
-  from_port         = 49154
-  to_port           = 49154
-  protocol          = "tcp"
-  self              = true
-  security_group_id = aws_security_group.monitoring_traffic.id
-}
-resource "aws_security_group_rule" "solarwinds" {
-  provider          = aws.network
-  type              = "ingress"
-  from_port         = 17790
-  to_port           = 17790
-  protocol          = "tcp"
-  self              = true
-  security_group_id = aws_security_group.monitoring_traffic.id
-}
