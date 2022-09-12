@@ -91,7 +91,7 @@ resource "aws_security_group" "active_directory_security_group_dc2dc" {
   }
   egress {
     from_port = 0
-    to_port   = 65535
+    to_port   = 0
     protocol  = -1
     self      = true # This allows egress between hosts within the same SG
   }
